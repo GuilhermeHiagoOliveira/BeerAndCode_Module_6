@@ -8,52 +8,18 @@
 </head>
 <body>
     {{ $user['name'] }}<br>
-    @if($user['admin'] == true)
-        Você é admin do nosso sistema
-    @elseif($user['id'] == 1)
-        Você é o primeiro usuário do nosso sistema
-    @else
-        Olá usuário
-    @endif
 
-    <br>
+    @switch($user['id'])
+        @case(1)
+            Usuario 1 do sistema
+            @break
+        @case(2)
+            Usuario 2 do sistema
+            @break
+        @default
+            Usuario não encontrado
 
-    @isset($user['name'])
-        existe a propriedade name
-    @endisset
-
-    <br>
-
-    @empty($user['name'])
-        name está vazio
-    @endempty
-
-    <br>
-
-    @auth
-        Olá usuário autenticado
-    @endauth
-
-    @guest
-        Olá visitante
-    @endguest
-
-    <br>
-
-    @production
-        Só roda em produção
-    @endproduction
-
-    @env('local')
-        Só roda em ambiente local
-    @endenv
-
-    <br>
-
-    @unless ($user['admin'])
-        Você não é admin
-
-    @endunless
+    @endswitch
 
     <script>
         const user = {{ Js::from($user) }}
