@@ -11,7 +11,17 @@
             <p>{{ Session::get('success') }}</p>
         </div>
     @endif
-    
+
+    @datetime(now())
+
+    @even(4)
+        Olá, eu sou par
+    @endeven
+
+    @odd(4)
+        Olá, eu sou ímpar
+    @endodd
+
     <form action="{{ route('send-form') }}" method="POST">
         @csrf
         <div class="mb-4">
