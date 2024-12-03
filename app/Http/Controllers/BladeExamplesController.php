@@ -18,8 +18,23 @@ class BladeExamplesController extends Controller
                 <p>Cidade Natal: <strong>Campinas - SP</strong></p><br/>
             "
         ];
+
+        $users = [
+            ['id' => 1, 'name' => 'Guilherme'],
+            ['id' => 2, 'name' => 'João'],
+            ['id' => 3, 'name' => 'Maria'],
+            ['id' => 4, 'name' => 'José'],
+        ];
+
+        $users2 = [];
+
+        $count = 0;
+
         return view('index', [
-            'user' => $user
+            'user' => $user,
+            'users' => $users,
+            'count' => $count,
+            'users2' => $users2
         ]);
     }
 }
