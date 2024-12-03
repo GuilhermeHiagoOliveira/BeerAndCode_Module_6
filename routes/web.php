@@ -3,4 +3,7 @@
 use App\Http\Controllers\BladeExamplesController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', BladeExamplesController::class . '@index');
+Route::controller(BladeExamplesController::class)->group(function () {
+    Route::get('/', 'index');
+    Route::get('/second', 'secondPage');
+});

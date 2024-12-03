@@ -37,4 +37,9 @@ class BladeExamplesController extends Controller
             'users2' => $users2
         ]);
     }
+
+    public function secondPage()
+    {
+        return view('second');
+    }
 }
