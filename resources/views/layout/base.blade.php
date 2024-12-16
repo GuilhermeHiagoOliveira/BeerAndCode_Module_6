@@ -8,21 +8,20 @@
     <title>@yield('title')</title>
     @stack('scripts')
 </head>
-<body class="min-h-screen">
+<body>
 
-    <div class="flex flex-col items-center justify-center min-h-screen">
+    <header>
+        @sectionMissing('navigation')
+            @include('layout.navigation', ['menu' => ['Home', 'About', 'Services', 'Contact']])
+        @endif
+        @hasSection('navigation')
+            @yield('navigation')
+        @endif
+    </header>
 
-        <div class="px-32">
-            <main>
-                <x-alert
-                    :$title
-                    :$message
-                    type="warning"
-                />
-            </main>
-        </div>
-
-    </div>
+    <main>
+        @yield('content')
+    </main>
 
 </body>
 </html>
