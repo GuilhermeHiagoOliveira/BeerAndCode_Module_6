@@ -13,13 +13,19 @@
     <div class="flex flex-col items-center justify-center min-h-screen">
 
         <div class="px-32">
-            <main>
-                <x-alert
-                    :$title
-                    :$message
-                    type="success"
-                />
-            </main>
+
+            <x-alert
+                :$title
+                :$message
+                type="success"
+            >
+                <x-button
+
+                    data-customerid="123"
+                >
+                </x-button>
+            </x-alert>
+
         </div>
 
     </div>
